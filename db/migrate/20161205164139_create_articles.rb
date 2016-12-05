@@ -6,6 +6,7 @@ class CreateArticles < ActiveRecord::Migration[5.0]
       t.string :description
       t.string :contact
       t.decimal :price
+      t.string :url_key
       t.timestamps
     end
   end

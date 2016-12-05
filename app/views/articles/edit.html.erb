@@ -1,1 +1,19 @@
-edit.html.erb
+<p> Your url key is /secret/<%=@article.url_key %></p><br>
+<p> Don't Forget it!!!</p>
+
+<%= form_for [@category, @article] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :desciption %>
+  <%= f.text_area :description, size: "40x10" %><br>
+  <%= f.label :price %>
+  <%= f.number_field :price %><br>
+  <%= f.label :contact %>
+  <%= f.text_field :contact %><br>
+
+  <%= f.submit %>
+  <% end %>
+
+<br><p> Or whatever like delete it!</p>
+<%= link_to 'Destroy',  category_article_path(@category, @article),
+    data: { confirm: 'Are you sure?' }, method: :delete %>

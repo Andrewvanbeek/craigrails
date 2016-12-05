@@ -1,0 +1,5 @@
+<h2>Category: <%= @category.title %></h2>
+<%= link_to('create new article', new_category_article_path(@category, @article)) %><br><br>
+<% @articles.each do |article| %>
+  <%= link_to article.title, category_article_path(@category, article) %><br>
+<% end %>
